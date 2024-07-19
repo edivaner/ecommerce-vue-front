@@ -7,6 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Instala as dependências do projeto
+RUN npm cache clean --force
 RUN npm install
 
 # Copia o restante dos arquivos do projeto para o contêiner
