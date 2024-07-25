@@ -7,9 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        customDark: {
+        custom_bg_head: {
           DEFAULT: '#111111',    // Dark shade
+          hover_header: '#fff'
         },
+        custom_txt_header: {
+          DEFAULT: '#fff',
+          houver_header: '#111'
+        }
       },
     },
   },

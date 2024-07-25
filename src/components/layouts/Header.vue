@@ -1,7 +1,7 @@
 <template>
-    <header class="bg-customDark  shadow text-white ">
+    <header class="bg-custom_bg_head  shadow text-custom_txt_header ">
         <div clas="">
-            <div class="bg-customDark container mx-auto px-0 py-0 flex items-center justify-between">
+            <div class="bg-custom_bg_head container mx-auto px-0 py-0 flex items-center justify-between">
                 <div>
                     <a href="#">
                         <img src="./../../assets/img/logoE-shop.jpg" alt="Logo E-Shop" class="w-[200px] md:w-[150px]">
@@ -31,23 +31,41 @@
                     </button>
                 </div>
             </div>
-            <div class="bg-customDark">
+            <div class="bg-custom_bg_head">
                 <div class="hidden md:block">
                     <nav class="px-4 py-6 flex items-center justify-between">
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Departamentos</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Cupom</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Cartão Loja</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Marketplace</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Anunciadas na TV</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Retira Rápido</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Pague com Pix</a>
-                        <a href="#" class="w-40 text-center rounded-full hover:bg-white hover:text-black">Serviço</a>
+                        <a href="#" @click="toggleSubMenu" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Departamentos <i class="fa-solid fa-chevron-down"></i></a>
+                        
+                            <div v-show="isSubMenuOpen" :class="{
+                                    'hidden': isMenuOpen, 
+                                    'flex': isMenuOpen,  
+                                    'absolute': true,
+                                    'bg-black': true, 
+                                    'top-44': true, 
+                                    'left-8': true, 
+                                    'w-screen': isMenuOpen,
+                                    'w-60':true,
+                                    'pl-4': true,
+                                    'pb-4': true,
+                                    'rounded-b-lg': true,
+                                }">
+                                <a href="#" class="block rounded-full p-1 hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Masculinos</a>
+                                <a href="#" class="block rounded-full p-1 hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Femininos</a>
+                                <a href="#" class="block rounded-full p-1 hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Infantil</a>
+                            </div>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Cupom</a>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Cartão Loja</a>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Marketplace</a>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Anunciadas na TV</a>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Retira Rápido</a>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Pague com Pix</a>
+                        <a href="#" class="w-40 text-center rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Serviço</a>
                     </nav>
                 </div>
                 <div class="md:hidden">
                     <div class="flex items-center justify-between px-4 py-6">
                         <nav class="relative">
-                            <button @click="toggleMenu" class="block md:hidden px-4 py-2 rounded text-white bg-black">
+                            <button @click="toggleMenu" class="block md:hidden px-4 py-2 rounded text-custom_txt_header bg-black">
                             ☰
                             </button>
                             <div :class="{
@@ -64,24 +82,24 @@
                                     'pl-4': true,
                                 }" style="left: -15px;">
                                 <div>
-                                    <a href="#" @click="toggleSubMenu" class="hover:bg-white hover:text-black">Departamentos <i class="fa-solid fa-chevron-right"></i></a>
+                                    <a href="#" @click="toggleSubMenu" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Departamentos <i class="fa-solid fa-chevron-right"></i></a>
                                     <div v-show="isSubMenuOpen" class="ml-4 mt-2 space-y-2">
-                                        <a href="#" class="block rounded-full hover:bg-white hover:text-black">Masculinos</a>
-                                        <a href="#" class="block rounded-full hover:bg-white hover:text-black">Femininos</a>
-                                        <a href="#" class="block rounded-full hover:bg-white hover:text-black">Infantil</a>
+                                        <a href="#" class="block rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Masculinos</a>
+                                        <a href="#" class="block rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Femininos</a>
+                                        <a href="#" class="block rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header">Infantil</a>
                                     </div>
                                 </div>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Cupom</a>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Cartão Loja</a>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Marketplace</a>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Anunciadas na TV</a>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Retira Rápido</a>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Pague com Pix</a>
-                                <a href="#" class="hover:bg-white hover:text-black rounded-full">Serviço</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Cupom</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Cartão Loja</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Marketplace</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Anunciadas na TV</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Retira Rápido</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Pague com Pix</a>
+                                <a href="#" class="hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header rounded-full">Serviço</a>
                             </div>
                         </nav>
                         <div class="">
-                            <button class="rounded-full hover:bg-white hover:text-black border px-2 py-1">
+                            <button class="rounded-full hover:bg-custom_bg_head-hover_header hover:text-custom_txt_header-houver_header border px-2 py-1">
                                 Entre ou cadastre-se <br>
                                 <small>Para ver seus pedidos</small>
                             </button>
